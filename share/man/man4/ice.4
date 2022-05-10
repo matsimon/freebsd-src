@@ -180,9 +180,9 @@ This is a display of the current setting.
 .It Va hw.ice.fw_version
 This is a display of the Firmware version.
 .Sh Interrupt Storms
-It is important to note that 40G operation can generate
-high numbers of interrupts, often incorrectly being interpreted as a storm
-condition in the kernel.
+It is important to note that 40G and 100G operation can generate high
+numbers of interrupts, often incorrectly being interpreted as
+a storm condition in the kernel.
 It is suggested that this be resolved by setting:
 .Bl -tag -width indent
 .It Va hw.intr_storm_threshold: 0
