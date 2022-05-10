@@ -172,41 +172,41 @@ Tunables can be set at the
 prompt before booting the kernel or stored in
 .Xr loader.conf 5 .
 See the
-.Xr iflib 4 .
+.Xr iflib 4
 man page for more information on using iflib sysctl variables as tunables.
 .Bl -tag -width indent
-.It Va hw.ice.enable_msix
+.It Va hw.ice.#.enable_msix
 Allows one to enable/disable MSIX, thus forcing MSI instead.
-.It Va hw.ice.ringsz
+.It Va hw.ice.#.ringsz
 Set the number of descriptors in the rings. Note that this
 changes BOTH the TX and RX rings; they cannot be set independently.
 This tunable isn't available if using iflib.
-.It Va hw.ice.max_queues
+.It Va hw.ice.#.max_queues
 Set the number of queues (each a TX/RX pair) for the port. This
 allows one to override the autocalculation if it's set to 0.
 This tunable isn't available if using iflib.
-.It Va hw.ice.dynamic_rx_itr
+.It Va hw.ice.#.dynamic_rx_itr
 The dynamic RX interrupt control. Set to 1 to enable.
-.It Va hw.ice.dynamic_tx_itr
+.It Va hw.ice.#.dynamic_tx_itr
 The dynamic TX interrupt control. Set to 1 to enable.
-.It Va hw.ice.rx_itr
+.It Va hw.ice.#.rx_itr
 The RX interrupt rate value.
-.It Va hw.ice.tx_itr
+.It Va hw.ice.#.tx_itr
 The TX interrupt rate value.
 .El
 .Pp
 .Sh SYSCTL PROCEDURES
 .Bl -tag -width indent
-.It Va hw.ice.fc
+.It Va hw.ice.#.fc
 Allows one to set the flow control value. A value of 0 disables flow control,
 3 enables full, 1 is RX, and 2 is TX pause.
-.It Va hw.ice.advertise_speed
+.It Va hw.ice.#.advertise_speed
 Allows one to set advertised link speeds, this will then cause a link
 renegotiation. With the appropriate adapter this can cause a link at 10GB,
 1GB, or 100MB.
-.It Va hw.ice.current_speed
+.It Va hw.ice.#.current_speed
 This is a display of the current setting.
-.It Va hw.ice.fw_version
+.It Va hw.ice.#.fw_version
 Displays the current firmware and NVM versions of the adapter.
 .Sh INTERRUPT STORMS
 It is important to note that 40G and 100G operation can generate high
@@ -235,6 +235,7 @@ email all the specific information related to the issue to
 .Mt freebsd@intel.com .
 .Sh SEE ALSO
 .Xr arp 4 ,
+.Xr iflib 4 ,
 .Xr netintro 4 ,
 .Xr ng_ether 4 ,
 .Xr vlan 4 ,
