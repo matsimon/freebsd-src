@@ -64,8 +64,9 @@ Support for Jumbo Frames is provided via the interface MTU setting.
 Selecting an MTU larger than 1500 bytes with the
 .Xr ifconfig 8
 utility configures the adapter to receive and transmit Jumbo Frames.
-The maximum MTU setting for Jumbo Frames is 9706. This value coincides
-with the maximum Jumbo Frames size of 9728.
+The maximum MTU size for Jumbo Frames is 9706. This value coincides
+with the maximum Jumbo Frame size of 9728.
+.Pp
 This driver version supports VLANs.
 For information on enabling VLANs, see the
 .Pa README .
@@ -76,6 +77,66 @@ be set and unset.
 .Pp
 For more information on configuring this device, see
 .Xr ifconfig 8 .
+.Pp
+.Sh HARDWARE
+Most adapters in the Intel Ethernet 800 Series with SFP+/SFP28/QSFP+/QSFP28 cages
+have firmware that requires that Intel qualified modules are used; these
+qualified modules are listed below.
+This qualification check cannot be disabled by the driver.
+.Pp
+The
+.Nm
+driver supports 100Gb Ethernet adapters with these QSFP28 modules:
+.Pp
+.Bl -bullet -compact
+.It
+Intel 100G QSFP28 100GBASE-SR4 E100GQSFPSR28SRX
+.It
+Intel 100G QSFP28 100GBASE-SR4 SPTMBP1PMCDF
+.It
+Intel 100G QSFP28 100GBASE-CWDM4 SPTSBP3CLCCO
+.It
+Intel 100G QSFP28 100GBASE-DR SPTSLP2SLCDF
+.El
+.Pp
+The
+.Nm
+driver supports 25Gb Ethernet adapters with these SFP28 modules:
+.Pp
+.Bl -bullet -compact
+.It
+Intel 10G/25G SFP28 25GBASE-SR E25GSFP28SR
+.It
+Intel 10G/25G SFP28 25GBASE-SR E25GSFP28SRX (Extended Temp)
+.It
+Intel 10G/25G SFP28 25GBASE-LR E25GSFP28LRX (Extended Temp)
+.El
+.Pp
+The
+.Nm
+driver supports 25Gb and 10Gb Ethernet adapters with these SFP+ modules:
+.Pp
+.Bl -bullet -compact
+.It
+Intel 1G/10G SFP+ SR FTLX8571D3BCV-IT
+.It
+Intel 1G/10G SFP+ SR AFBR-703SDZ-IN2
+.It
+Intel 1G/10G SFP+ LR FTLX1471D3BCV-IT
+.It
+Intel 1G/10G SFP+ 10GBASE-SR E10GSFPSR
+.It
+Intel 10G SFP+ 10GBASE-SR E10GSFPSRX (Extended Temp)
+.It
+Intel 1G/10G SFP+ 10GBASE-LR E10GSFPLR
+.El
+.Pp
+Note that adapters also support all passive and active
+limiting direct attach cables that comply with SFF-8431 v4.1 and
+SFF-8472 v10.4 specifications.
+.Pp
+This is not an exhaustive list; please consult product documentation for an
+up-to-date list of supported media.
 .Sh LOADER TUNABLES
 Tunables can be set at the
 .Xr loader 8
